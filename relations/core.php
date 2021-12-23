@@ -16,12 +16,26 @@
     $set = filter_var($set, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
     $relation = filter_var($relation, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
 
+    /* str_contains: only in PHP 8 */
+    // if string contains a char
+    function in($value, $char) {
+        $value = str_split($value);
+
+        foreach($value as $v){
+            if($v == $char){
+                return true;
+            }
+        }
+        return false;
+    }
+
     // validation
     $error = false;
-    if(!str_contains($set, ",")){
+
+    if(!in($set, ",")){
         $error = true;
     }
-    else if(!str_contains($relation, ",") or !str_contains($relation, " ")){
+    else if(!in($relation, ",") or !in($relation, " ")){
         $error = true;
     }
 

@@ -43,6 +43,7 @@
                 echo "
                     <br>
                     <a href='/clear.php'><button class='btn btn-warning'>Clear</button></a>
+                    <br><br>
                 ";
             }
         ?>
