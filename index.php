@@ -7,6 +7,8 @@
     
     <div class="calculate">
         <br>
+        <p>Calculator to find out relations from sets</p>
+        <br>
         <form action="/relations/core.php" method="post" autocomplete="off">
 
             <label for="set">SET:</label>
