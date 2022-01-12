@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="RelCalculator is a Relation calculator to find relations between sets... Relation is a collection of ordered pairs. For each pair (x, y) the object X is from the first set and the Y if from the second set, but a relation can be between one set with itself." title="RelCalculator | Relations Calculator">
     <meta name="keywords" content="RelCalculator, Relations-Calculator, Relations, Calculator, sets, examples, formulas, what-is-relations, Reflexive, Symmetric, Transitive, Anti-Symmetric, Anti-Reflexive">
+    <meta name="google-site-verification" content="1EemOmINfwbJ-Zmd8PnVoVYIgco58LPLPMdUcXkkLXU" />
 
     <title>Relation Calculator</title>
 
