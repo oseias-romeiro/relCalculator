@@ -60,8 +60,8 @@
     <p class="formula">
         (a, a) &#8712; R &#x2192; a &#8712; A
     </p>
-    <b>Exemple: </b>
-    <p class="exemple">
+    <b>Example: </b>
+    <p class="example">
         set: A = {1,2,3}
         <br>
         R = {(1,1) (2,2) (3,2) (3,3)}
@@ -71,8 +71,8 @@
     <p class="formula">
         (a, b) &#8712; R &#x2192; (b, a) &#8712; R
     </p>
-    <b>Exemple: </b>
-    <p class="exemple">
+    <b>Example: </b>
+    <p class="example">
         set: A = {1,2,3}
         <br>
         R = {(1,2) (2,1) (2,3) (3,2)}
@@ -82,8 +82,8 @@
     <p class="formula">
         (a, b) &#8712; R ^ (b, a) &#8712; R &#x2192; (a = b)
     </p>
-    <b>Exemple: </b>
-    <p class="exemple">
+    <b>Example: </b>
+    <p class="example">
         set: A = {1,2,3}
         <br>
         R = {(1,1) (2,2)}
