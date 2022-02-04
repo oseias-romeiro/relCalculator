@@ -57,4 +57,24 @@
             return !$find;
         }
     }
+
+    function transitive($set, $rel)
+    {
+        foreach($rel as $r) {
+            foreach($rel as $r1) {
+                $ar = [$r[0], $r1[1]];
+                $found = false;
+                foreach($rel as $r2) {
+                    if($r2 == $ar){
+                        $found = true;
+                        break;
+                    }
+                }
+                if (!$found) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 ?>

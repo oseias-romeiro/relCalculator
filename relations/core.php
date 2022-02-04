@@ -98,6 +98,14 @@
         $result[] = "Not Antisymmetric";
     }
 
+    // transitive
+    $ref = transitive($set, $rel);
+    if($ref){
+        $result[] = "Transitive";
+    }else {
+        $result[] = "Not Transitive";
+    }
+
     /* result */
     $_SESSION["set"] = $_POST['set'];
     $_SESSION["relation"] = $_POST['relation'];

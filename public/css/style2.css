@@ -41,3 +41,36 @@ nav {
 .alert {
     cursor: pointer;
 }
+
+.card {
+    padding: 20px;
+}
+
+.how {
+    font-size: 0.7rem;
+    margin-top: 10px;
+}
+
+img {
+    max-width: 300px;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+}
+.navbar-collapse {
+    z-index: 2;
+}
+
+/* responsive */
+@media only screen and (min-width: 900px) {
+    .matrixes {
+        margin-top: -100px;
+        float: right;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .navbar-nav {
+        padding: 20px;
+    }
+}
