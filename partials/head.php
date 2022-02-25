@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="RelCalculator is a Relation calculator to find relations between sets... Relation is a collection of ordered pairs. For each pair (x, y) the object X is from the first set and the Y if from the second set, but a relation can be between one set with itself." title="RelCalculator | Relations Calculator">
-    <meta name="keywords" content="RelCalculator, Relations-Calculator, Relations, Calculator, sets, examples, formulas, what-is-relations, Reflexive, Symmetric, Transitive, Anti-Symmetric, Anti-Reflexive, relation-properties-calculator, properties-of-relations-calculator">
+    <meta name="keywords" content="RelCalculator, Relations-Calculator, Relations, Calculator, sets, examples, formulas, what-is-relations, Reflexive, Symmetric, Transitive, Anti-Symmetric, Anti-Reflexive, relation-properties-calculator, properties-of-relations-calculator, matrix, matrix-generator, matrix-relation, matrixes">
     <meta name="google-site-verification" content="hZcQF8vJ9UveUt0bOdHXs2w-E6NEyzFWpVpEc4GFKSI" />
 
     <title>Relation Calculator</title>

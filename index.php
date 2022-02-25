@@ -59,8 +59,9 @@
     <h3 class="question">What is relations? What is Reflexive, Symmetric and Antisymmetric properties?</h3>
     <br>
     <p>
-        Relation is a collection of ordered pairs. For each pair (x, y) the object X is from the first set and the Y if from the second set, but a relation can be between one set with itself.
+        Relation is a collection of ordered pairs. For each pair (x, y), each object X is from the symbols of the first set and the Y is from the symbols of second set.
     </p>
+    <p>But a relation can be between one set with itself too. In this case the X and Y objects is from symbols of only one set, this case is most common!</p>
     <p>Relation R in set A</p>
     <h2>* Reflexive</h2>
     <p class="formula">
@@ -120,6 +121,10 @@
         set: A = {1,2,3}
         <br>
         R = {(1,1) (2,2) (1,2) (2,1)}
+    </p>
+    <h3>keywords</h3>
+    <p>
+        <b>RelCalculator</b>, <b>Relations-Calculator</b>, <b>Relations</b>, <b>Calculator</b>, <b>sets</b>, <b>examples</b>, <b>formulas</b>, <b>what-is-relations</b>, <b>Reflexive</b>, <b>Symmetric</b>, <b>Transitive</b>, <b>Anti-Symmetric</b>, <b>Anti-Reflexive</b>, <b>relation-properties-calculator</b>, <b>properties-of-relations-calculator</b>, <b>matrix</b>, <b>matrix-generator</b>, <b>matrix-relation</b>, <b>matrixes</b>
     </p>
 </div>
 
