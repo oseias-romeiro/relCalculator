@@ -33,9 +33,6 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="/">RelCalculator</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/maxGen/index.php">Relations Matrix Generator</a>
-                </li>
             </ul>
         </div>
     </nav>

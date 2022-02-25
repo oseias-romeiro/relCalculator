@@ -14,8 +14,10 @@
                 echo "
                     <br>
                     <a href='/clear.php'><button class='btn btn-warning'>Clear</button></a>
-                    </div>
                 ";
+
+                include_once "relations/matrix.php";
+                echo "</div>";
             }
         ?>
     

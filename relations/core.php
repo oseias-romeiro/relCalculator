@@ -111,5 +111,6 @@
     $_SESSION["relation"] = $_POST['relation'];
     
     $_SESSION["Result"] = $result;
+    $_SESSION["matrix"] = $rel;
     header("Location: /");
 ?>
