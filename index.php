@@ -61,8 +61,14 @@
     <p>
         Relation is a collection of ordered pairs. For each pair (x, y), each object X is from the symbols of the first set and the Y is from the symbols of second set.
     </p>
-    <p>But a relation can be between one set with itself too. In this case the X and Y objects is from symbols of only one set, this case is most common!</p>
+    <p>
+        But a relation can be between one set with itself too. In this case the X and Y objects is from symbols of only one set, this case is most common!
+    </p>
+    <p>
+        For matrixes representation of relations, each line represent the X object and column, Y object. Each square represent a combination based on symbols of set. The squares is 1 if your pair exist on relation. But its depends of symbols set, maybe its can not use letters, instead numbers or whatever other set of symbols.
+    </p>
     <p>Relation R in set A</p>
+    <br>
     <h2>* Reflexive</h2>
     <p class="formula">
         (a, a) &#8712; R &#x2192; a &#8712; A
