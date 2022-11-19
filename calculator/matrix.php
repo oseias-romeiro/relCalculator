@@ -1,10 +1,10 @@
+
 <table class="table table-dark table-bordered" style="width: 200px; margin: 40px">
 <tbody>
 
 <?php
     $matrix = $_SESSION['matrix'];
     $size = count($matrix);
-
     $c = 0;
     $x = 1;
     $y = 1;
@@ -39,3 +39,4 @@
 </tbody>
 </table>
 <small style="font-size: 0.6rem;">For correct matrix, use only NUMERIC SYMBOLS and put pairs in ASCENDING ORDER!</small>
+<p></p>

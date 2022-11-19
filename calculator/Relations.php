@@ -1,23 +1,33 @@
 <?php
-    
-    function reflexive($set, $rel) {
+
+class Relations
+{
+    protected $set;
+    protected $rel;
+
+    function __construct($set, $rel) {
+        $this->set = $set;
+        $this->rel = $rel;
+    }
+
+    function isReflexive() {
         $equalXY = array();
-        foreach($rel as $r){
+        foreach($this->rel as $r){
             if($r[0] == $r[1]){
                 $equalXY[] = $r[0];
             }
         }
-        return(count($equalXY) == count($set));
+        return(count($equalXY) == count($this->set));
     }
-
-    function symmetric($set, $rel) {
+    
+    function isSymmetric() {
         $dyagonal = true;
         $find = false;
-        foreach($rel as $r){
+        foreach($this->rel as $r){
             if($r[0] != $r[1]){
                 $dyagonal = false;
                 $find = false;
-                foreach($rel as $r2){
+                foreach($this->rel as $r2){
                     if($r[0] == $r2[1] and $r[1] == $r2[0]){
                         $find = true;
                     }
@@ -33,14 +43,14 @@
             return $find;
         }
     }
-    function antisymmetric($set, $rel) {
+    function isAntisymmetric() {
         $dyagonal = true;
         $find = false;
-        foreach($rel as $r){
+        foreach($this->rel as $r){
             if($r[0] != $r[1]){
                 $dyagonal = false;
                 $find = false;
-                foreach($rel as $r2){
+                foreach($this->rel as $r2){
                     if($r[0] == $r2[1] and $r[1] == $r2[0]){
                         $find = true;
                         break;
@@ -57,14 +67,14 @@
             return !$find;
         }
     }
-
-    function transitive($set, $rel)
+    
+    function isTransitive()
     {
-        foreach($rel as $r) {
-            foreach($rel as $r1) {
+        foreach($this->rel as $r) {
+            foreach($this->rel as $r1) {
                 $ar = [$r[0], $r1[1]];
                 $found = false;
-                foreach($rel as $r2) {
+                foreach($this->rel as $r2) {
                     if($r2 == $ar){
                         $found = true;
                         break;
@@ -77,4 +87,6 @@
         }
         return true;
     }
+}
+
 ?>

@@ -1,4 +1,7 @@
-<?php include_once "partials/head.php" ?>
+<?php
+    session_start();
+    include_once "partials/head.php";
+?>
 
 <div class="container">
 
@@ -11,12 +14,10 @@
                 foreach($_SESSION["Result"] as $r){
                     echo "* $r<br>";
                 }
+                include_once "calculator/matrix.php";
                 echo "
-                    <br>
                     <a href='/clear.php'><button class='btn btn-warning'>Clear</button></a>
                 ";
-
-                include_once "relations/matrix.php";
                 echo "</div>";
             }
         ?>
@@ -24,7 +25,7 @@
     <div class="card">
         <h4>* Calculator to find out relations of sets</h4>
         <br>
-        <form action="/relations/core.php" class="calculate" method="post" autocomplete="off">
+        <form action="/calculator/main.php" class="calculate" method="post" autocomplete="off">
 
             <label for="set">SET:</label>
             <input type="text" class="form-control" name="set" placeholder="{1,2,3,4}" required

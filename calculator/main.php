@@ -1,10 +1,14 @@
 <?php
-    session_start(); 
+    // GET -> redirect to home
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        header("Location: /");
+    }
 
+    session_start(); 
     // apaga resultado antigo
     session_unset();
 
-    include_once "../relations/calculate.php";
+    include_once "../calculator/Relations.php";
 
     // data in
     $set = $_POST['set'];
@@ -72,35 +76,32 @@
     }
 
     /* calculate */
+    $relations = new Relations($set, $rel);
     $result = array();
 
     // reflexive
-    $ref = reflexive($set, $rel);
-    if($ref){
+    if($relations->isReflexive()){
         $result[] = "Reflexive";
     }else {
         $result[] = "Not Reflexive";
     }
 
     // symmetric
-    $ref = symmetric($set, $rel);
-    if($ref){
+    if($relations->isSymmetric()){
         $result[] = "Symmetric";
     }else {
         $result[] = "Not Symmetric";
     }
 
     // antisymmetric
-    $ref = antisymmetric($set, $rel);
-    if($ref){
+    if($relations->isAntisymmetric()){
         $result[] = "Antisymmetric";
     }else {
         $result[] = "Not Antisymmetric";
     }
 
     // transitive
-    $ref = transitive($set, $rel);
-    if($ref){
+    if($relations->isTransitive()){
         $result[] = "Transitive";
     }else {
         $result[] = "Not Transitive";
