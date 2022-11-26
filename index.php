@@ -2,9 +2,12 @@
     session_start();
     include_once "partials/head.php";
 ?>
+<mark id="msg_help">
+    <small>Some error or suggestions? <a href="mailto:oseiasromeirom@gmail.com">Write to me</a>.</small>
+    <button style="border: 1px solid black;" class="btn btn-help" onclick="delete_msg()">X</button>
+</mark>
 
 <div class="container">
-
     <h1 class="title">Relations Calculator</h1>
     
         <?php // results

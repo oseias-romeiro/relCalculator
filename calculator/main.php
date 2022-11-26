@@ -75,6 +75,23 @@
         die();
     }
 
+    foreach ($rel as $r) {
+        foreach ($r as $value) {
+            $found = false;
+            foreach ($set as $s) {
+                if($value == $s){
+                    $found = true;
+                    break;
+                }
+            }
+            if (!$found) {
+                $_SESSION['msgError'] = "The values in Relation Field should be contain only symbols spacified in Set Field";
+                header("Location: /");
+                die();
+            }
+        }
+    }
+
     /* calculate */
     $relations = new Relations($set, $rel);
     $result = array();
@@ -113,5 +130,7 @@
     
     $_SESSION["Result"] = $result;
     $_SESSION["matrix"] = $rel;
+    $_SESSION["matrix_set"] = $set;
+
     header("Location: /");
 ?>

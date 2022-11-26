@@ -2,60 +2,69 @@
 <tbody>
 
 <?php
-// array(array(str)) -> array(array(int))
-function convert_int_mat($rel){
-    $matrix = array();
-    foreach ($rel as $r) {
-        array_push($matrix, [intval($r[0]), intval($r[0])]);
-    }
-    return $matrix;
-}
 
-// return max number of array(array(int))
-function maxi($rel){
-    $max = 0;
-    foreach ($rel as $r) {
-        if($r[0] > $max){
-            $max = $r[0];
-        }elseif($r[1] > $max) {
-            $max = $r[0];
+function CombSet(array $set)
+{
+    $comb = array();
+    foreach ($set as $row) {
+        $x = array();
+        foreach ($set as $col) {
+            array_push($x, $col);
         }
+        $comb[$row] = $x;
     }
-    return $max;
+    return $comb;
 }
 
-// fill and print matrix
-function fill_print_mat($rel){
+function matrix(array $set, array $rel)
+{
+    $mat = CombSet($set);
+    $mat0 = array();
 
-    $matrix = convert_int_mat($rel);
-
-    $max_value = maxi($matrix);
-
-    for ($row=0; $row < $max_value+1; $row++) {
-        echo "<tr>";
-        echo '<td class="td_hd">'.$row.'</td>';
-        for ($col=0; $col < $max_value+1; $col++) { 
+    $x = 0;
+    foreach ($mat as $row => $m0) {
+        $y = 0;
+        foreach ($m0 as $m1) {
             $found = false;
-            foreach ($matrix as $r) {
-                if ($row == $r[0] and $col == $r[1]) {
-                    echo "<td>1</td>";
+            foreach ($rel as $r) {
+                if ($r[0] == $row and $r[1] == $m1) {
+                    $mat0[$x][$y] = 1;
                     $found = true;
                     break;
                 }
             }
             if (!$found) {
-                echo "<td>0</td>";
+                $mat0[$x][$y] = 0;
             }
+            $y += 1;
+        }
+        $x += 1;
+    }
+    return $mat0;
+}
+
+// fill and print matrix
+function print_mat($set, $rel){
+
+    $matrix = matrix($set, $rel);
+
+    $max_value = sizeof($set);
+
+    for ($row=0; $row < $max_value; $row++) {
+        echo "<tr>";
+        echo '<td class="td_hd">'.$set[$row].'</td>';
+        for ($col=0; $col < $max_value; $col++) { 
+            echo '<td>'.$matrix[$row][$col].'</td>';
         }
         echo "</tr>";
     }
 }
 
-// fill_print_mat([["0","0"],["1","1"],["2","2"],["4","4"]]);
-fill_print_mat($_SESSION['matrix']);
+print_mat($_SESSION['matrix_set'], $_SESSION['matrix']);
+//print_mat(['a', 'b', 'c'], [['a','b'], ['b','b']]);
 
 ?>
 </tbody>
 </table>
-<small style="font-size: 0.6rem;">For correct matrix, use only NUMERIC SYMBOLS and put pairs in ASCENDING ORDER!</small>
+<small style="font-size: 0.6rem;">TIP: You can use not-numeric symbols too!</small>
 <p></p>
