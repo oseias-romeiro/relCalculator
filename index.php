@@ -3,8 +3,8 @@
     include_once "partials/head.php";
 ?>
 <mark id="msg_help">
-    <small>Some error or suggestions? <a href="mailto:oseiasromeirom@gmail.com">Write to me</a>.</small>
-    <button style="border: 1px solid black;" class="btn btn-help" onclick="delete_msg()">X</button>
+    <small>Some error or suggestions? <a href="mailto:oseiasromeiro@outlook.com">Write to me</a>.</small>
+    <button style="border: 1px solid black;" class="btn btn-help" onclick="close_popup()">X</button>
 </mark>
 
 <div class="container">
