@@ -120,7 +120,7 @@
     <hr><br>
     <h2>* Transitive</h2>
     <p class="formula">
-        (a, b) ^ (b, c) &#8712; R &#x2192; (a, b) &#8712; R
+        (a, b) ^ (b, c) &#8712; R &#x2192; (a, c) &#8712; R
     </p>
     <div class="matrixes">
         <b>Matrix: </b><br>
