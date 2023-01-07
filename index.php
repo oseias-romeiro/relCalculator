@@ -133,6 +133,37 @@
         R = {(1,1) (2,2) (1,2) (2,1)}
     </p>
     <br>
+    <h3>Prolog Code</h3>
+    <textarea class="form-control" rows="30" readonly>
+        /* Prolog functions checks some relation properties of a list
+            * obs.: Ls2 is a list equal to Ls
+        */
+
+        is_symmetric([],_) :- true.
+        is_reflexive([],_) :- true.
+        is_transitive([],_) :- true.
+
+        is_symmetric([[X1,X2]|Ls], Ls2) :- 
+            member([X1,X2],Ls2),
+            member([X2,X1],Ls2),
+            is_symmetric(Ls, Ls2).
+        
+        is_reflexive([[X1,X2]|Ls], Ls2) :-
+            (
+                X1 is X2;
+                (member([X1,X1],Ls2) , member([X2,X2],Ls2))
+            ),
+            is_reflexive(Ls, Ls2).
+        
+        is_transitive([[X1,X2]|Ls], Ls2) :-
+            (
+                not(member([X2,X3],Ls2));
+                (member([X2,X3],Ls2) , member([X1,X3],Ls2))
+            ),
+            is_transitive(Ls, Ls2).
+
+    </textarea>
+    <br>
     <h3><u>keywords</u>:</h3>
     <p>
         <b>RelCalculator</b>, <b>Relations-Calculator</b>, <b>Relations</b>, <b>Calculator</b>, <b>sets</b>, <b>examples</b>, <b>formulas</b>, <b>what-is-relations</b>, <b>Reflexive</b>, <b>Symmetric</b>, <b>Transitive</b>, <b>Anti-Symmetric</b>, <b>Anti-Reflexive</b>, <b>relation-properties-calculator</b>, <b>properties-of-relations-calculator</b>, <b>matrix</b>, <b>matrix-generator</b>, <b>matrix-relation</b>, <b>matrixes</b>
