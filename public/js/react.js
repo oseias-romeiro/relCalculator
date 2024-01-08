@@ -36,21 +36,34 @@ const App = ()=>{
         React.createElement('label', null, 'Relation:'),
         React.createElement('input', {onChange: handlerRelInput, id: 'relation', type: 'text', className: 'form-control', placeholder: '1,1 2,2 3,3 4,4', required: true}),
         React.createElement('button', {onClick: submit, className: 'btn btn-success mt-2', type: 'button', style: {width: '100%'}}, 'submit'),
-    )
+    );
+
+    const matrix = ()=>{
+        console.log('matrix set e rel', set, rel)
+        let mat = matrixGen(set, rel);
+        return React.createElement('table', {className: 'table'}, 
+            mat.forEach(line => {
+                React.createElement('tr', null,
+                    line.forEach(cell => {
+                        React.createElement('td', null, cell)
+                    })
+                )
+            }) 
+        );
+    }
 
     return React.createElement('div', {'className': 'row'},
         React.createElement('div', {'className': 'col-6'}, form),
-        result == null ? ''
-        : React.createElement('div', {'className': 'col-3'},
+        result == null ? '' :
+        React.createElement('div', {'className': 'col-3'},
             React.createElement('p', null, result.isReflexive() ? 'is reflexive' : 'is not reflexive'),
             React.createElement('p', null, result.isSymmetric() ? 'is symmetric' : 'is not symmetric'),
             React.createElement('p', null, result.isAntisymmetric() ? 'is antisymmetric' : 'is not antisymmetric'),
             React.createElement('p', null, result.isTransitive() ? 'is transitive' : 'is not transitive'),
         ),
-        React.createElement('div', {'className': 'col-3'},
-            /* matrix */
-        ),
-    ); 
+        result == null ? '' :
+        React.createElement('div', {'className': 'col-3'}, matrix)
+    );
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
