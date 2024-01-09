@@ -58,22 +58,28 @@ class Relations {
     }
 
     isTransitive() {
-        for (const r of this.rel) {
-            for (const r1 of this.rel) {
-                const ar = [r[0], r1[1]];
-                let found = false;
-                for (const r2 of this.rel) {
-                    if (JSON.stringify(r2) === JSON.stringify(ar)) {
-                        found = true;
-                        break;
-                    }
-                }
-                if (!found) {
+        let relation = this.rel;
+
+        if (relation.length === 0) {
+            return true;
+        }
+    
+        const elements = this.set;
+    
+        for (const x of elements) {
+            for (const y of elements) {
+                if (Array.from(elements).some(z =>
+                    relation.some(pair => pair[0] === x && pair[1] === z) 
+                    && relation.some(pair => pair[0] === z && pair[1] === y))
+                    && !relation.some(pair => pair[0] === x && pair[1] === y)
+                ) {
+                    console.log("is not transitive, because not found pair", x, y);
                     return false;
                 }
             }
         }
         return true;
     }
+    
 }
 

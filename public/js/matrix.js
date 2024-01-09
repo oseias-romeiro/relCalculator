@@ -12,11 +12,12 @@ const emptyMatrix = (set)=>{
 }
 
 const fillMatrix = (set, rel, matrix)=>{
+    let matrix2 = [];
     rel.forEach(e => {
         matrix.forEach(line => {
-            if(line[0] == e[0]){
-                let y = set.find((v) => v==e[1])
-                if (y) line[y] = 1;
+            if(line[0] === e[0]){
+                let y = set.indexOf(e[1]);
+                if (y != -1) line[y+1] = 1;
             }
         });
     });
@@ -30,8 +31,3 @@ const matrixGen = (set, rel)=>{
     matrix = fillMatrix(set, rel, matrix);
     return matrix;
 }
-/*
-const set = ['1','2','3'];
-const rel = [['1','1'],['1','2'],['2','2'],['3','3']];
-matrixGen(set, rel);
-*/

@@ -9,19 +9,38 @@ const tansformer = (data, mode)=>{
         return relation2;
     }
 }
+
+const Matrix = ({ set, rel }) => {
+    let mat = matrixGen(set, rel);
+    return (
+        <table className="table table-dark bg-dark text-center">
+            {mat.map((line, rowIndex) => (
+            <tr key={rowIndex}>
+                {line.map((cell, cellIndex) => (
+                    cellIndex == 0?  <td className="td_hd" key={cellIndex}>{cell}</td>
+                    : <td key={cellIndex}>{cell}</td>
+                ))}
+            </tr>
+            ))}
+        </table>
+    );
+  };
+  
+
 const App = ()=>{
-    const [set, setSet] = React.useState(null);
-    const [rel, setRel] = React.useState(null);
+    const [set, setSet] = React.useState(['1','2','3']);
+    const [rel, setRel] = React.useState([['1','1'], ['2','2'], ['3','3']]);
     const [result, setResult] = React.useState(null);
 
-    const submit = ()=>{
-
-        console.log("set: ", set);
-        console.log("relation: ", rel);
-    
-        resultObj = new Relations(set, rel);
+    React.useEffect(() => {
+        console.log("Set:", set);
+        console.log("Rel:", rel);
+        let resultObj = new Relations(set, rel);
         setResult(resultObj);
-    }
+    }, [set, rel]);
+
+    //let resultObj = new Relations(set, rel);
+    //setResult(resultObj);
 
     const handlerSetInput = (e)=>{
         setSet(tansformer(e.target.value, 'set'));
@@ -30,41 +49,30 @@ const App = ()=>{
         setRel(tansformer(e.target.value, 'relation'));
     }
 
-    const form = React.createElement('form', null,
-        React.createElement('label', null, 'Set:'),
-        React.createElement('input', {onChange: handlerSetInput, id: 'set', type: 'text', className: 'form-control', placeholder: '1,2,3,4', required: true}),
-        React.createElement('label', null, 'Relation:'),
-        React.createElement('input', {onChange: handlerRelInput, id: 'relation', type: 'text', className: 'form-control', placeholder: '1,1 2,2 3,3 4,4', required: true}),
-        React.createElement('button', {onClick: submit, className: 'btn btn-success mt-2', type: 'button', style: {width: '100%'}}, 'submit'),
-    );
+    const form = (
+        <form>
+            <label htmlFor="set">Set:</label>
+            <input onChange={handlerSetInput} id="set" type="text" className="form-control" placeholder="1,2,3" required />
+            <br/>
+            <label htmlFor="relation">Relation:</label>
+            <input onChange={handlerRelInput} id="relation" type="text" className="form-control" placeholder="1,1 2,2 3,3" required />
+        </form>
+      );
+      
 
-    const matrix = ()=>{
-        console.log('matrix set e rel', set, rel)
-        let mat = matrixGen(set, rel);
-        return React.createElement('table', {className: 'table'}, 
-            mat.forEach(line => {
-                React.createElement('tr', null,
-                    line.forEach(cell => {
-                        React.createElement('td', null, cell)
-                    })
-                )
-            }) 
-        );
-    }
-
-    return React.createElement('div', {'className': 'row'},
-        React.createElement('div', {'className': 'col-6'}, form),
-        result == null ? '' :
-        React.createElement('div', {'className': 'col-3'},
-            React.createElement('p', null, result.isReflexive() ? 'is reflexive' : 'is not reflexive'),
-            React.createElement('p', null, result.isSymmetric() ? 'is symmetric' : 'is not symmetric'),
-            React.createElement('p', null, result.isAntisymmetric() ? 'is antisymmetric' : 'is not antisymmetric'),
-            React.createElement('p', null, result.isTransitive() ? 'is transitive' : 'is not transitive'),
-        ),
-        result == null ? '' :
-        React.createElement('div', {'className': 'col-3'}, matrix)
-    );
+    return <div className="row">
+        <div className="col-md-6">{form}</div>
+        {result == null ? '' :
+        <div className="col-md-3">
+            <p>{result.isReflexive() ? 'is reflexive' : 'is not reflexive'}</p>
+            <p>{result.isSymmetric() ? 'is symmetric' : 'is not symmetric'}</p>
+            <p>{result.isAntisymmetric() ? 'is antisymmetric' : 'is not antisymmetric'}</p>
+            <p>{result.isTransitive() ? 'is transitive' : 'is not transitive'}</p>
+        </div>}
+        {result == null ? '' :
+        <div className="col-md-3"><Matrix set={set} rel={rel}/></div>}
+    </div>
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(React.createElement(App));
+root.render(<App/>);
