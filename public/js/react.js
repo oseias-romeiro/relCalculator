@@ -39,9 +39,6 @@ const App = ()=>{
         setResult(resultObj);
     }, [set, rel]);
 
-    //let resultObj = new Relations(set, rel);
-    //setResult(resultObj);
-
     const handlerSetInput = (e)=>{
         setSet(tansformer(e.target.value, 'set'));
     }
@@ -53,9 +50,11 @@ const App = ()=>{
         <form>
             <label htmlFor="set">Set:</label>
             <input onChange={handlerSetInput} id="set" type="text" className="form-control" placeholder="1,2,3" required />
+            <small>Use commas between items</small>
             <br/>
             <label htmlFor="relation">Relation:</label>
             <input onChange={handlerRelInput} id="relation" type="text" className="form-control" placeholder="1,1 2,2 3,3" required />
+            <small>Use space between pairs and inside use commas</small>
         </form>
       );
       
@@ -64,10 +63,12 @@ const App = ()=>{
         <div className="col-md-6">{form}</div>
         {result == null ? '' :
         <div className="col-md-3">
-            <p>{result.isReflexive() ? 'is reflexive' : 'is not reflexive'}</p>
-            <p>{result.isSymmetric() ? 'is symmetric' : 'is not symmetric'}</p>
-            <p>{result.isAntisymmetric() ? 'is antisymmetric' : 'is not antisymmetric'}</p>
-            <p>{result.isTransitive() ? 'is transitive' : 'is not transitive'}</p>
+            <ul className="list-group">
+                <li className="list-group-item">{result.isReflexive() ? 'is reflexive' : 'is not reflexive'}</li>
+                <li className="list-group-item">{result.isSymmetric() ? 'is symmetric' : 'is not symmetric'}</li>
+                <li className="list-group-item">{result.isAntisymmetric() ? 'is antisymmetric' : 'is not antisymmetric'}</li>
+                <li className="list-group-item">{result.isTransitive() ? 'is transitive' : 'is not transitive'}</li>
+            </ul>
         </div>}
         {result == null ? '' :
         <div className="col-md-3"><Matrix set={set} rel={rel}/></div>}
