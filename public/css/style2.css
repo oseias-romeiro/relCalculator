@@ -1,0 +1,80 @@
+body {
+    font-family: Helvetica, sans-serif;
+    font-size: 1.4rem;
+}
+h2 {
+    font-size: 2rem;
+}
+
+nav {
+    height: 80px;
+}
+
+.title {
+    font-size: 3rem;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.container {
+    min-height: 100vh;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+
+.formula, .exemple {
+    margin-left: 50px;
+}
+.formula {
+    padding: 5px;
+    max-width: 400px;
+    background-color: rgb(223, 145, 145);   
+}
+.question {
+    color: rgb(38, 121, 216);
+}
+
+.calculate {
+    max-width: 800px;
+}
+
+.alert {
+    cursor: pointer;
+}
+
+.card {
+    padding: 20px;
+}
+
+.how {
+    font-size: 0.7rem;
+    margin-top: 10px;
+}
+
+img {
+    max-width: 300px;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+}
+.navbar-collapse {
+    z-index: 2;
+}
+
+.td_hd {
+    background-color: gray;
+}
+
+/* responsive */
+@media only screen and (min-width: 900px) {
+    .matrixes {
+        margin-top: -100px;
+        float: right;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .navbar-nav {
+        padding: 20px;
+    }
+}
