@@ -49,119 +49,97 @@
             For matrixes representation of relations, each line represent the X object and column, Y object. Each square represents a combination based on symbols of the set. The squares are 1 if your pair exist on relation. But it depends of symbols set, maybe it can not use letters, instead numbers or whatever other set of symbols.
         </p>
 
-        <h2>Examples:</h2>
-        <small>Relation R in set A</small>
-        <hr>
-        <div class="row">
-            <div class="col-md-8">
-                <h3>* Reflexive</h3>
-                <p class="formula">
-                    (a, a) &#8712; R &#x2192; a &#8712; A
-                </p>
-                <br>
-                <b>Example: </b>
-                <p class="example">
-                    set: A = {1,2,3}
-                    <br>
-                    R = {(1,1) (2,2) (3,2) (3,3)}
-                </p>
-            </div>
-            <div class="col">
-                <img class="img-fluid" src="./public/img/reflexive-matrix.png" alt="Reflexive matrix">
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-md-8">
-                <h2>* Symmetric</h2>
-                <p class="formula">
-                    (a, b) &#8712; R &#x2192; (b, a) &#8712; R
-                </p>
-                <br>
-                <b>Example: </b>
-                <p class="example">
-                    set: A = {1,2,3}
-                    <br>
-                    R = {(1,2) (2,1) (2,3) (3,2)}
-                </p>
-            </div>
-            <div class="col">
-                <div>
-                    <img class="img-fluid" src="./public/img/symmetric-matrix.png" alt="Symmetric matrix">
+        <ul class="list-group">
+            <li class="list-group-item active">
+                <h2>Examples</h2>
+                <small>Relation R in set A</small>
+            </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h3>* Reflexive</h3>
+                        <p class="formula">
+                            (a, a) &#8712; R &#x2192; a &#8712; A
+                        </p>
+                        <br>
+                        <b>Example: </b>
+                        <p class="example">
+                            set: A = {1,2,3}
+                            <br>
+                            R = {(1,1) (2,2) (3,2) (3,3)}
+                        </p>
+                    </div>
+                    <div class="col">
+                        <img class="img-fluid" src="./public/img/reflexive-matrix.png" alt="Reflexive matrix">
+                    </div>
                 </div>
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-md-8">
-                <h2>* Antisymmetric</h2>
-                <p class="formula">
-                    (a, b) &#8712; R ^ (b, a) &#8712; R &#x2192; (a = b)
-                </p>
-                <br>
-                <b>Example: </b>
-                <p class="example">
-                    set: A = {1,2,3}
-                    <br>
-                    R = {(1,1) (2,2)}
-                </p>
-            </div>
-            <div class="col">
-                <div>
-                    <img class="img-fluid" src="./public/img/antisymetric-matrix.png" alt="Antisymmetric matrix">
+            </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h2>* Symmetric</h2>
+                        <p class="formula">
+                            (a, b) &#8712; R &#x2192; (b, a) &#8712; R
+                        </p>
+                        <br>
+                        <b>Example: </b>
+                        <p class="example">
+                            set: A = {1,2,3}
+                            <br>
+                            R = {(1,2) (2,1) (2,3) (3,2)}
+                        </p>
+                    </div>
+                    <div class="col">
+                        <div>
+                            <img class="img-fluid" src="./public/img/symmetric-matrix.png" alt="Symmetric matrix">
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-md-8">
-                <h2>* Transitive</h2>
-                <p class="formula">
-                    (a, b) ^ (b, c) &#8712; R &#x2192; (a, c) &#8712; R
-                </p>
-                <br>
-                <b>Example: </b>
-                <p class="example">
-                    set: A = {1,2,3}
-                    <br>
-                    R = {(1,1) (2,2) (1,2) (2,1)}
-                </p>
-            </div>
-            <div class="col">
-                <img class="img-fluid" src="./public/img/transitive-matrix.png" alt="Transitive matrix">
-            </div>
-        </div>
-        <hr>
-        <h3>Prolog Code</h3>
-        <pre class="prettyprint">
-            /* Prolog functions checks some relation properties of a list
-                * obs.: Ls2 is a list equal to Ls
-            */
-
-            is_symmetric([],_) :- true.
-            is_reflexive([],_) :- true.
-            is_transitive([],_) :- true.
-
-            is_symmetric([[X1,X2]|Ls], Ls2) :- 
-                member([X1,X2],Ls2),
-                member([X2,X1],Ls2),
-                is_symmetric(Ls, Ls2).
-            
-            is_reflexive([[X1,X2]|Ls], Ls2) :-
-                (
-                    X1 is X2;
-                    (member([X1,X1],Ls2) , member([X2,X2],Ls2))
-                ),
-                is_reflexive(Ls, Ls2).
-            
-            is_transitive([[X1,X2]|Ls], Ls2) :-
-                (
-                    not(member([X2,X3],Ls2));
-                    (member([X2,X3],Ls2) , member([X1,X3],Ls2))
-                ),
-                is_transitive(Ls, Ls2).
-        </pre>
-
+            </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h2>* Antisymmetric</h2>
+                        <p class="formula">
+                            (a, b) &#8712; R ^ (b, a) &#8712; R &#x2192; (a = b)
+                        </p>
+                        <br>
+                        <b>Example: </b>
+                        <p class="example">
+                            set: A = {1,2,3}
+                            <br>
+                            R = {(1,1) (2,2)}
+                        </p>
+                    </div>
+                    <div class="col">
+                        <div>
+                            <img class="img-fluid" src="./public/img/antisymetric-matrix.png" alt="Antisymmetric matrix">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h2>* Transitive</h2>
+                        <p class="formula">
+                            (a, b) ^ (b, c) &#8712; R &#x2192; (a, c) &#8712; R
+                        </p>
+                        <br>
+                        <b>Example: </b>
+                        <p class="example">
+                            set: A = {1,2,3}
+                            <br>
+                            R = {(1,1) (2,2) (1,2) (2,1)}
+                        </p>
+                    </div>
+                    <div class="col">
+                        <img class="img-fluid" src="./public/img/transitive-matrix.png" alt="Transitive matrix">
+                    </div>
+                </div>
+            </li>
+        </ul>
+        
         <br>
         <h3><u>keywords</u>:</h3>
         <p>

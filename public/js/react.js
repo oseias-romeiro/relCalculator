@@ -81,8 +81,11 @@ const App = ()=>{
             <label htmlFor="relation">Relation:</label>
             <input onChange={handlerRelInput} id="relation" type="text" className="form-control" required value={relInput}/>
             <small>Use space between pairs and inside use commas</small>
-            <br/>
-            <button type="button" onClick={handleSubmit} className="btn btn-success">Go</button>
+            <br/><br/>
+            <div className="text-center">
+                <button type="button" onClick={handleSubmit} className="btn btn-success go_btn">Go</button>
+            </div>
+            
         </form>
       );
       
