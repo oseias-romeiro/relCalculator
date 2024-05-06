@@ -28,33 +28,64 @@ const Matrix = ({ set, rel }) => {
   
 
 const App = ()=>{
+    const [hash, setHash] = React.useState(window.location.hash);
     const [set, setSet] = React.useState(['1','2','3']);
     const [rel, setRel] = React.useState([['1','1'], ['2','2'], ['3','3']]);
+    const [setInput, setSetInput] = React.useState("1,2,3");
+    const [relInput, setRelInput] = React.useState("");
     const [result, setResult] = React.useState(null);
 
     React.useEffect(() => {
-        console.log("Set:", set);
-        console.log("Rel:", rel);
+        // valid hash
+        if (hash === '' || hash === '#' || !hash.includes('set') || !hash.includes('rel')){
+            const initHash = 'set=1,2,3&rel=1,1 2,2 3,3';
+            setHash(initHash);
+            window.location.hash = initHash;
+            window.location.reload();
+        }
+
+        // get set and relation from hash
+        let hashObj = hash.split('&');
+        let set = hashObj[0].split('=')[1];
+        let rel = hashObj[1].split('=')[1];
+        rel = rel.replaceAll('%20', ' ')
+        setSetInput(set);
+        setRelInput(rel);
+
+        // transform set and relation
+        set = tansformer(set, 'set');
+        rel = tansformer(rel, 'relation');
+        setSet(set);
+        setRel(rel);
+        
+        // get result
         let resultObj = new Relations(set, rel);
         setResult(resultObj);
-    }, [set, rel]);
+    }, [hash]);
 
-    const handlerSetInput = (e)=>{
-        setSet(tansformer(e.target.value, 'set'));
-    }
-    const handlerRelInput = (e)=>{
-        setRel(tansformer(e.target.value, 'relation'));
+    const handlerSetInput = (e)=> setSetInput(e.target.value);
+    const handlerRelInput = (e)=> setRelInput(e.target.value);
+
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        window.location.hash = `set=${setInput}&rel=${relInput}`;
+        setHash(window.location.hash);
     }
 
     const form = (
         <form>
             <label htmlFor="set">Set:</label>
-            <input onChange={handlerSetInput} id="set" type="text" className="form-control" placeholder="1,2,3" required />
+            <input onChange={handlerSetInput} id="set" type="text" className="form-control" required value={setInput}/>
             <small>Use commas between items</small>
             <br/>
             <label htmlFor="relation">Relation:</label>
-            <input onChange={handlerRelInput} id="relation" type="text" className="form-control" placeholder="1,1 2,2 3,3" required />
+            <input onChange={handlerRelInput} id="relation" type="text" className="form-control" required value={relInput}/>
             <small>Use space between pairs and inside use commas</small>
+            <br/><br/>
+            <div className="text-center">
+                <button type="button" onClick={handleSubmit} className="btn btn-success go_btn">Go</button>
+            </div>
+            
         </form>
       );
       
@@ -71,7 +102,9 @@ const App = ()=>{
             </ul>
         </div>}
         {result == null ? '' :
-        <div className="col-md-3"><Matrix set={set} rel={rel}/></div>}
+        <div className="col-md-3">
+            <Matrix set={set} rel={rel}/>
+        </div>}
     </div>
 }
 
