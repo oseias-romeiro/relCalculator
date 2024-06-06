@@ -1,3 +1,4 @@
+
 const transformer = (data, mode) => {
     if (mode === 'set') {
         return data
@@ -25,7 +26,7 @@ const Matrix = ({ set, rel }) => {
             ))}
         </table>
     );
-  };
+};
   
 
 const App = ()=>{
@@ -79,7 +80,7 @@ const App = ()=>{
             <label htmlFor="set">Set:</label>
             <input onChange={handlerSetInput} id="set" type="text" className="form-control" required value={setInput}/>
             <small>Use commas between items</small>
-            <br/>
+            <br/><br/>
             <label htmlFor="relation">Relation:</label>
             <input onChange={handlerRelInput} id="relation" type="text" className="form-control" required value={relInput}/>
             <small>Use space between pairs and inside use commas</small>
@@ -89,7 +90,7 @@ const App = ()=>{
             </div>
             
         </form>
-      );
+    );
       
 
     return <div className="row">
