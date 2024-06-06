@@ -1,0 +1,21 @@
+name: App Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install FTP client
+        run: sudo apt-get install -y lftp
+        
+      - name: Deploy to FTP server
+        run: |
+          lftp -c "open -u ${{ secrets.DEPLPOY_USERNAME }},${{ secrets.DEPLOY_PASSWORD }} ${{ secrets.DEPLPOY_SERVER }}; set ssl:verify-certificate no; mirror -R --reverse --verbose ./ ./"
