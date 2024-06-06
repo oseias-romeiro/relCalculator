@@ -1,14 +1,15 @@
-
-const tansformer = (data, mode)=>{
-    if (mode==='set') {
-        return data.split(',');
-    }else if (mode==='relation') {
-        let relation = data.split(' ')
-        let relation2 = []
-        relation.forEach(element => relation2.push(element.split(',')));
-        return relation2;
+const transformer = (data, mode) => {
+    if (mode === 'set') {
+        return data
+            .split(',')
+            .filter(item => item.trim() !== "");
+    } else if (mode === 'relation') {
+        return data
+            .split(' ')
+            .filter(item => item.trim() !== "")
+            .map(item => item.split(','));
     }
-}
+};
 
 const Matrix = ({ set, rel }) => {
     let mat = matrixGen(set, rel);
@@ -48,13 +49,14 @@ const App = ()=>{
         let hashObj = hash.split('&');
         let set = hashObj[0].split('=')[1];
         let rel = hashObj[1].split('=')[1];
-        rel = rel.replaceAll('%20', ' ')
+        rel = rel.replaceAll('%20', ' ');
+        set = set.replaceAll('%20', '');
         setSetInput(set);
         setRelInput(rel);
 
         // transform set and relation
-        set = tansformer(set, 'set');
-        rel = tansformer(rel, 'relation');
+        set = transformer(set, 'set');
+        rel = transformer(rel, 'relation');
         setSet(set);
         setRel(rel);
         
