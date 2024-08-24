@@ -1,6 +1,8 @@
 # relCalculator
 Calculator to find out the relations of sets like Reflexive, Symmetric and Antisymmetric properties. In addition to assembling the matrix representation of relations.
 
+![View sample](./public/img/sample.gif)
+
 ## What is relations? What are Reflexive, Symmetric and Antisymmetric properties?
 
 Relation is a collection of ordered pairs. For each pair (x, y), each object X is from the symbols of the first set and the Y is from the symbols of the second set.
