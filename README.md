@@ -1,13 +1,13 @@
-# relCalculator
-Calculator to find out the relations of sets like Reflexive, Symmetric and Antisymmetric properties. In addition to assembling the matrix representation of relations.
+#relCalculator
+
+relCalculator is a tool designed to identify and analyze the relationships within sets, specifically focusing on Reflexive, Symmetric, and Antisymmetric properties. It also provides a matrix representation of these relations for easier visualization.
 
 ![View sample](./public/img/sample.gif)
 
-## What is relations? What are Reflexive, Symmetric and Antisymmetric properties?
+## What Are Relations? What Are Reflexive, Symmetric, and Antisymmetric Properties?
 
-Relation is a collection of ordered pairs. For each pair (x, y), each object X is from the symbols of the first set and the Y is from the symbols of the second set.
+A relation is a collection of ordered pairs where each pair (x, y) represents a connection between elements. In this context, X is an element from the first set, and Y is an element from the second set.
 
-But a relation can be between one set with it too. In this case the X and Y objects are from symbols of only one set, this case is most common!
+Relations can also occur within a single set, where both X and Y are from the same set. This scenario is the most common and is key to understanding the relational properties.
 
-For matrixes representation of relations, each line represent the X object and column, Y object. Each square represents a combination based on symbols of the set. The squares are 1 if your pair exist on relation. But it depends of symbols set, maybe it can not use letters, instead numbers or whatever other set of symbols.
-
+In the matrix representation of relations, each row corresponds to an X element, and each column corresponds to a Y element. Each cell in the matrix indicates whether a particular pair (x, y) exists in the relation—marked by a 1 if the pair is present. The set can be composed of symbols, numbers, or any other characters, depending on the context.
