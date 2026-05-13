@@ -1,30 +1,248 @@
+:root {
+    --primary: #16a34a;
+    --primary-dark: #15803d;
+    --bg: #f4f7fb;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --shadow: 0 10px 30px rgba(0,0,0,0.06);
+    --radius: 18px;
+}
+
 body {
-    font-family: Helvetica, sans-serif;
-    font-size: 1.2rem;
+    font-family: Inter, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 1.05rem;
+    line-height: 1.6;
 }
 
-.formula, .exemple {
-    margin-left: 50px;
-}
-.formula {
-    padding: 5px;
-    max-width: 400px;
-    background-color: rgb(223, 145, 145);   
+/* NAVBAR */
+
+.navbar {
+    background: linear-gradient(90deg, #0f172a, #111827);
+    padding: 1rem 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
-.td_hd {
-    background-color: gray;
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.4rem;
 }
 
-small {
-    font-size: 1rem;
+.nav-link {
+    color: rgba(255,255,255,0.85) !important;
+    transition: 0.2s;
 }
 
-table, td {
-    border: 1px solid white;
-    border-collapse: collapse;
+.nav-link:hover {
+    color: white !important;
 }
+
+/* HERO CARD */
+
+.hero-card {
+    background: white;
+    border-radius: 28px;
+    padding: 3rem;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.hero-title span {
+    color: var(--primary);
+}
+
+.hero-subtitle {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 3rem;
+}
+
+/* INPUTS */
+
+.form-control {
+    border-radius: 14px;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    box-shadow: none !important;
+    transition: all 0.2s;
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(22,163,74,0.12) !important;
+}
+
+/* BUTTON */
 
 .go_btn {
-    min-width: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 14px;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        #22c55e
+    );
+    color: white;
+    transition: 0.2s;
+}
+
+.go_btn:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(
+        135deg,
+        var(--primary-dark),
+        var(--primary)
+    );
+}
+
+/* RESULTS PANEL */
+
+.result-panel {
+    background: #fafafa;
+    border-radius: 18px;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+}
+
+.property-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 14px 18px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #edf2f7;
+}
+
+.property-success {
+    color: #16a34a;
+    font-weight: 700;
+}
+
+.property-fail {
+    color: #dc2626;
+    font-weight: 700;
+}
+
+/* INFO SECTION */
+
+.info-card {
+    background: linear-gradient(
+        135deg,
+        #eff6ff,
+        #f8fafc
+    );
+    border: 1px solid #dbeafe;
+    border-radius: 24px;
+    padding: 2rem;
+    margin: 3rem 0;
+}
+
+/* EXAMPLES */
+
+.examples-section {
+    margin-top: 4rem;
+}
+
+.example-card {
+    background: white;
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.example-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.formula {
+    display: inline-block;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+.example {
+    margin-top: 1rem;
+    color: var(--muted);
+}
+
+/* KEYWORDS */
+
+.keyword {
+    display: inline-block;
+    background: white;
+    border: 1px solid var(--border);
+    padding: 8px 14px;
+    border-radius: 999px;
+    margin: 5px;
+    font-size: 0.95rem;
+}
+
+/* FOOTER */
+
+footer {
+    margin-top: 5rem;
+    background: linear-gradient(
+        90deg,
+        #0f172a,
+        #111827
+    );
+    color: white;
+    padding: 2rem;
+}
+
+footer a {
+    color: #60a5fa;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .hero-card {
+        padding: 2rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .example-card {
+        padding: 1.5rem;
+    }
+}
+
+/* KEYWORDS */
+.kws {
+    border-radius: 5px;
+    padding: 5px;
+    background: #dbeafe;
+    border: 1px solid #cecece;
+    color: #888888;
 }

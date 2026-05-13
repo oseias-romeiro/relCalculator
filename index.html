@@ -9,17 +9,20 @@
     <meta name="google-site-verification" content="_vJftw34mQuip4c-yM8RZ_ZuDTeuqfLvmSqk4VJjoMc" />
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="./public/css/style.css">
-    <link rel="shortcut icon" href="./public/img/matrix-icon-whitebg.png" type="image/png">
+    <link rel="shortcut icon" href="public/img/icons/favicon.png" type="image/png">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="./public/img/matrix-icon.png" alt="" width="30" height="30" class="d-inline-block">
-                RelCalculator
+                <img src="public/img/icons/favicon.png" alt="" width="50" height="50" class="d-inline-block">
+                Rel<span class="text-success">Calculator</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -38,134 +41,215 @@
                 </ul>
             </div>
         </div>
-      </nav>
-
-    <div class="alert alert-light text-center w-100" id="msg_help">
-        <div class="row">
-            <div class="col-2"></div>
-            <div class="col-8">
-                Any error or suggestions? <a href="mailto:oseiasromeirom+relcalc@gmail.com">Write to me</a>
-            </div>
-            <div class="col-2">
-                <button class="btn btn-close border rounded-circle p-2" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        </div>
-    </div>
+    </nav>
 
     <div class="container">
-        <div class="card p-5 my-5">
-            <h3>Calculator to find out the relations of sets</h3>
+        <div class="hero-card my-5">
+
+            <h1 class="hero-title">
+                Relation <span>Calculator</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                Analyze relations and discover their properties instantly.
+            </p>
+
             <div id="root"></div>
+
         </div>
         
-        <h3>What is relations? What are Reflexive, Symmetric and Antisymmetric properties?</h3>
-        <br>
-        <p>
-            Relation is a collection of ordered pairs. For each pair (x, y), each object X is from the symbols of the first set and the Y is from the symbols of the second set.
-        </p>
-        <p>
-            But a relation can be between one set with it too. In this case the X and Y objects are from symbols of only one set, this case is most common!
-        </p>
-        <p>
-            For matrixes representation of relations, each line represent the X object and column, Y object. Each square represents a combination based on symbols of the set. The squares are 1 if your pair exist on relation. But it depends of symbols set, maybe it can not use letters, instead numbers or whatever other set of symbols.
-        </p>
+        <div class="info-card">
 
-        <ul class="list-group">
-            <li class="list-group-item active bg-success bg-success">
-                <h2>Examples</h2>
-                <small>Relation R in set A</small>
-            </li>
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="col-md-8">
-                        <h3>* Reflexive</h3>
-                        <p class="formula">
+            <h2 class="text-primary">
+                <i class="bi bi-info-circle-fill"></i>
+                What are relations and their properties?
+            </h2>
+
+            <p>
+                A relation is a collection of ordered pairs. Each pair represents a connection between elements of a set.
+            </p>
+
+            <p>
+                Relations can have important mathematical properties such as:
+                reflexive, symmetric, antisymmetric and transitive.
+            </p>
+
+        </div>
+
+        <div class="examples-section">
+
+            <div class="d-flex flex-row">
+                <div class="bg-dark p-1" style="height: 100px;"></div>
+                
+                <div class="p-3">
+                    <h2>
+                        <i class="bi bi-journal-text"></i>
+                        Relation Properties
+                    </h2>
+                    <p class="text-secondary mb-4">
+                        Learn the main properties of relations with examples and their matrix representations.
+                    </p>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-md-7">
+                        <h3 class="example-title text-success">
+                            <img
+                                src="public/img/icons/relation-properties/reflexive.png" 
+                                alt="reflexive icon"
+                                width="70"
+                                height="70"
+                            >
+                            Reflexive
+                        </h3>
+                        <div class="formula text-success bg-success-subtle">
                             (a, a) &#8712; R &#x2192; a &#8712; A
-                        </p>
-                        <br>
-                        <b>Example: </b>
-                        <p class="example">
-                            set: A = {1,2,3}
-                            <br>
+                        </div>
+                        <div class="example">
+                            <strong>Example:</strong><br>
+                            A = {1,2,3}<br>
                             R = {(1,1) (2,2) (3,2) (3,3)}
-                        </p>
+                        </div>
                     </div>
-                    <div class="col">
-                        <img class="img-fluid" src="./public/img/reflexive-matrix.png" alt="Reflexive matrix">
+                    <div class="col-md-3">
+                        <img
+                            class="img-fluid rounded"
+                            src="./public/img/matrix-examples/reflexive.jpg"
+                            alt="Reflexive matrix"
+                            height="250px"
+                        >
                     </div>
                 </div>
-            </li>
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="col-md-8">
-                        <h2>* Symmetric</h2>
-                        <p class="formula">
+            </div>
+
+            <div class="example-card">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-md-7">
+                        <h3 class="example-title text-primary">
+                            <img
+                                src="public/img/icons/relation-properties/symmetric.png" 
+                                alt="symmetric icon"
+                                width="70"
+                                height="70"
+                            >
+                            Symmetric
+                        </h3>
+                        <div class="formula text-primary bg-primary-subtle">
                             (a, b) &#8712; R &#x2192; (b, a) &#8712; R
-                        </p>
-                        <br>
-                        <b>Example: </b>
-                        <p class="example">
-                            set: A = {1,2,3}
-                            <br>
+                        </div>
+                        <div class="example">
+                            <strong>Example:</strong><br>
+                            A = {1,2,3}<br>
                             R = {(1,2) (2,1) (2,3) (3,2)}
-                        </p>
+                        </div>
                     </div>
-                    <div class="col">
-                        <div>
-                            <img class="img-fluid" src="./public/img/symmetric-matrix.png" alt="Symmetric matrix">
+                    <div class="col-md-3">
+                        <div class="matrix-preview">
+                            <img
+                                class="img-fluid"
+                                src="./public/img/matrix-examples/symmetric.jpg"
+                                alt="Symmetric matrix"
+                            >
                         </div>
                     </div>
                 </div>
-            </li>
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="col-md-8">
-                        <h2>* Antisymmetric</h2>
-                        <p class="formula">
+            </div>
+
+            <div class="example-card">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-md-7">
+                        <h3 class="example-title text-warning">
+                            <img
+                                src="public/img/icons/relation-properties/antisymmetric.png" 
+                                alt="antisymmetric icon"
+                                width="70"
+                                height="70"
+                            >
+                            Antisymmetric
+                        </h3>
+                        <div class="formula text-warning bg-warning-subtle">
                             (a, b) &#8712; R ^ (b, a) &#8712; R &#x2192; (a = b)
-                        </p>
-                        <br>
-                        <b>Example: </b>
-                        <p class="example">
-                            set: A = {1,2,3}
-                            <br>
+                        </div>
+                        <div class="example">
+                            <strong>Example:</strong><br>
+                            A = {1,2,3}<br>
                             R = {(1,1) (2,2)}
-                        </p>
+                        </div>
                     </div>
-                    <div class="col">
-                        <div>
-                            <img class="img-fluid" src="./public/img/antisymetric-matrix.png" alt="Antisymmetric matrix">
+                    <div class="col-md-3">
+                        <div class="matrix-preview">
+                            <img
+                                class="img-fluid"
+                                src="./public/img/matrix-examples/anti-symmetric.jpg"
+                                alt="Antisymmetric matrix"
+                            >
                         </div>
                     </div>
                 </div>
-            </li>
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="col-md-8">
-                        <h2>* Transitive</h2>
-                        <p class="formula">
+            </div>
+            <div class="example-card">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-md-7">
+                        <h3 class="example-title text-danger">
+                            <img
+                                src="public/img/icons/relation-properties/transitive.png" 
+                                alt="transitive icon"
+                                width="70"
+                                height="70"
+                            >
+                            Transitive
+                        </h3>
+                        <div class="formula text-danger bg-danger-subtle">
                             (a, b) ^ (b, c) &#8712; R &#x2192; (a, c) &#8712; R
-                        </p>
-                        <br>
-                        <b>Example: </b>
-                        <p class="example">
-                            set: A = {1,2,3}
-                            <br>
+                        </div>
+                        <div class="example">
+                            <strong>Example:</strong><br>
+                            A = {1,2,3}<br>
                             R = {(1,1) (2,2) (1,2) (2,1)}
-                        </p>
+                        </div>
                     </div>
-                    <div class="col">
-                        <img class="img-fluid" src="./public/img/transitive-matrix.png" alt="Transitive matrix">
+                    <div class="col-md-3">
+                        <div class="matrix-preview">
+                            <img
+                                class="img-fluid"
+                                src="./public/img/matrix-examples/transitive.jpg"
+                                alt="Transitive matrix"
+                            >
+                        </div>
                     </div>
                 </div>
-            </li>
-        </ul>
+            </div>
+        </div>
         
         <br>
-        <h3><u>keywords</u>:</h3>
-        <p>
-            <b>RelCalculator</b>, <b>Relations-Calculator</b>, <b>Relations</b>, <b>Calculator</b>, <b>sets</b>, <b>examples</b>, <b>formulas</b>, <b>what-is-relations</b>, <b>Reflexive</b>, <b>Symmetric</b>, <b>Transitive</b>, <b>Anti-Symmetric</b>, <b>Anti-Reflexive</b>, <b>relation-properties-calculator</b>, <b>properties-of-relations-calculator</b>, <b>matrix</b>, <b>matrix-generator</b>, <b>matrix-relation</b>, <b>matrixes</b>
-        </p>
+        <div class="mt-5">
+
+            <span class="fs-5">
+                <b>Keywords:</b>
+            </span>
+
+            <span class="kws">RelCalculator</span>
+            <span class="kws">Relations-Calculator</span>
+            <span class="kws">Relations</span>
+            <span class="kws">Calculator</span>
+            <span class="kws">sets</span>
+            <span class="kws">examples</span>
+            <span class="kws">formulas</span>
+            <span class="kws">what-is-relations</span>
+            <span class="kws">Reflexive</span>
+            <span class="kws">Symmetric</span>
+            <span class="kws">Transitive</span>
+            <span class="kws">Anti-Symmetric</span>
+            <span class="kws">Anti-Reflexive</span>
+            <span class="kws">relation-properties-calculator</span>
+            <span class="kws">properties-of-relations-calculator</span>
+            <span class="kws">matrix</span>
+            <span class="kws">matrix-generator</span>
+            <span class="kws">matrix-relation</span>
+            <span class="kws">matrixes</span>
+        </div>
     </div>
 
     <footer class="bg-dark text-center text-light">
@@ -182,7 +266,7 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="./public/js/calculator.js"></script>
-    <script src="./public/js/matrix.js"></script>
+    <script src="./public/js/matrix.js" type="text/babel"></script>
     <script src="./public/js/react.js" type="text/babel"></script>
 </body>
 </html>

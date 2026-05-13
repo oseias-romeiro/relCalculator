@@ -12,14 +12,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="./public/css/style.css">
-    <link rel="shortcut icon" href="./public/img/matrix-icon-whitebg.png" type="image/png">
+    <link rel="shortcut icon" href="public/img/icons/favicon.png" type="image/png">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="./public/img/matrix-icon.png" alt="" width="30" height="30" class="d-inline-block">
-                RelCalculator
+                <img src="public/img/icons/favicon.png" alt="" width="50" height="50" class="d-inline-block">
+                Rel<span class="text-success">Calculator</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -39,14 +39,21 @@
             </div>
         </div>
     </nav>
-    <div class="container p-2 text-center d-flex align-items-center" style="max-width: 800px; height: 100vh;">
-        <div class="m-4">
-            <h1>About RelCalculator</h1>
-            <p>The relCalculator was born out of necessity. While working on linear algebra, I found myself in need of a tool to perform calculations involving relations between sets of symbols. Unfortunately, I couldn't find an online calculator that met my needs. So, I decided to create my own script to handle these calculations.</p>
-            <p>Realizing that others might benefit from a similar tool, I took the next step and developed this website to make the process easier, especially for those who may not be familiar with programming. The relCalculator is designed to simplify these complex calculations and make them accessible to everyone.</p>
-            <p>To further aid understanding, I've included explanations of the underlying concepts, accompanied by images to visually represent the ideas. My hope is that this site will serve as a valuable resource for anyone looking to explore and compute relationships in symbolic sets.</p>
-        </div>
+    <div
+        class="container p-3 text-center d-flex align-items-center"
+        style="max-width: 850px; min-height: 100vh;"
+    >
+    <div class="m-4">
+
+        <h1 class="mb-4">
+            About Rel<span class="text-success">Calculator</span>
+        </h1>
+
+        <p class="fs-5 text-secondary">
+            RelCalculator is an interactive tool created to simplify the study of relations between sets. Originally developed to support linear algebra and discrete mathematics exercises, the project evolved into a user-friendly platform that helps students and enthusiasts analyze relation properties, visualize matrices, and better understand concepts such as reflexivity, symmetry, antisymmetry, and transitivity through intuitive calculations and visual representations.
+        </p>
     </div>
+</div>
     
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
