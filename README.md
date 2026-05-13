@@ -1,13 +1,23 @@
-#relCalculator
+# relCalculator
 
-relCalculator is a tool designed to identify and analyze the relationships within sets, specifically focusing on Reflexive, Symmetric, and Antisymmetric properties. It also provides a matrix representation of these relations for easier visualization.
+relCalculator is a web application for analyzing relations between sets and visualizing their properties through interactive matrix representations. The project focuses on educational visualization and automated detection of relational properties such as Reflexive, Symmetric, Antisymmetric, and Transitive relations.
 
-![View sample](./public/img/sample.gif)
 
-## What Are Relations? What Are Reflexive, Symmetric, and Antisymmetric Properties?
+## Supported Properties
 
-A relation is a collection of ordered pairs where each pair (x, y) represents a connection between elements. In this context, X is an element from the first set, and Y is an element from the second set.
+- Reflexive
+- Symmetric
+- Antisymmetric
+- Transitive
 
-Relations can also occur within a single set, where both X and Y are from the same set. This scenario is the most common and is key to understanding the relational properties.
+## Matrix Visualization
 
-In the matrix representation of relations, each row corresponds to an X element, and each column corresponds to a Y element. Each cell in the matrix indicates whether a particular pair (x, y) exists in the relation—marked by a 1 if the pair is present. The set can be composed of symbols, numbers, or any other characters, depending on the context.
+The application represents relations using adjacency-style matrices, where:
+
+- rows represent source elements
+- columns represent target elements
+- cells indicate whether a relation exists
+
+## Project Goals
+
+The project was developed to provide a more intuitive and visual way to study relations and matrix representations commonly used in Discrete Mathematics and Linear Algebra.

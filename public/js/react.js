@@ -12,24 +12,7 @@ const transformer = (data, mode) => {
     }
 };
 
-const Matrix = ({ set, rel }) => {
-    let mat = matrixGen(set, rel);
-    return (
-        <table className="table table-dark bg-dark text-center">
-            {mat.map((line, rowIndex) => (
-            <tr key={rowIndex}>
-                {line.map((cell, cellIndex) => (
-                    cellIndex == 0?  <td className="td_hd" key={cellIndex}>{cell}</td>
-                    : <td key={cellIndex}>{cell}</td>
-                ))}
-            </tr>
-            ))}
-        </table>
-    );
-};
-  
-
-const App = ()=>{
+const App = () => {
     const [hash, setHash] = React.useState(window.location.hash);
     const [set, setSet] = React.useState(['1','2','3']);
     const [rel, setRel] = React.useState([['1','1'], ['2','2'], ['3','3']]);
@@ -74,41 +57,154 @@ const App = ()=>{
         window.location.hash = `set=${setInput}&rel=${relInput}`;
         setHash(window.location.hash);
     }
+    const handleShare = (e) => {
+        e.preventDefault();
+        navigator.clipboard.writeText(
+            window.location.href
+        ).then(() => {
+            alert('Link copied to clipboard!');
+        });
+    }
 
     const form = (
         <form>
-            <label htmlFor="set">Set:</label>
-            <input onChange={handlerSetInput} id="set" type="text" className="form-control" required value={setInput}/>
-            <small>Use commas between items</small>
-            <br/><br/>
-            <label htmlFor="relation">Relation:</label>
-            <input onChange={handlerRelInput} id="relation" type="text" className="form-control" required value={relInput}/>
-            <small>Use space between pairs and inside use commas</small>
-            <br/><br/>
-            <div className="text-center">
-                <button type="button" onClick={handleSubmit} className="btn btn-success go_btn">Go</button>
-            </div>
+            <label htmlFor="set">
+                <b>Set:</b>
+            </label>
+            <input
+                onChange={handlerSetInput}
+                id="set"
+                type="text"
+                className="form-control"
+                required
+                value={setInput}
+            />
+            <small>Enter elements of the set. Use commas between items.</small>
             
+            <br/><br/>
+            
+            <label htmlFor="relation">
+                <b>Relation:</b>
+            </label>
+            <input
+                onChange={handlerRelInput}
+                id="relation"
+                type="text"
+                className="form-control"
+                required
+                value={relInput}
+            />
+            <small>Enter pairs using spaces.</small>
+            
+            <br/><br/>
+            
+            <div className="text-center">
+                <button
+                    type="button"
+                    onClick={handleSubmit}
+                    className="btn btn-success go_btn"
+                >
+                    <i className="bi bi-calculator mx-1"></i>
+                    Calculate
+                </button>
+            </div>
         </form>
     );
-      
+    
+    return <>
+        <div className="row justify-content-center">
+            <div className="col-md-6">
+                {form}
+            </div>
+        </div>
+        <hr/>
+        {result == null ? '' :
+        <>
+            <div className="row justify-content-around align-items-center">
+                <div className="col-md-4">
+                    <ul className="list-group">
+                        
+                        <li className={
+                            "list-group-item d-flex justify-content-between align-items-center" + (
+                                result.isReflexive() ?
+                                ' list-group-item-success' :
+                                ' list-group-item-danger'
+                            )
+                        }>
+                            Reflexive
+                            <i className={
+                                result.isReflexive() ?
+                                'bi bi-check-circle-fill text-success pe-1' :
+                                'bi bi-x-circle-fill text-danger pe-1'
+                            }></i>
+                        </li>
 
-    return <div className="row">
-        <div className="col-md-6">{form}</div>
-        {result == null ? '' :
-        <div className="col-md-3">
-            <ul className="list-group">
-                <li className="list-group-item">{result.isReflexive() ? 'is reflexive' : 'is not reflexive'}</li>
-                <li className="list-group-item">{result.isSymmetric() ? 'is symmetric' : 'is not symmetric'}</li>
-                <li className="list-group-item">{result.isAntisymmetric() ? 'is antisymmetric' : 'is not antisymmetric'}</li>
-                <li className="list-group-item">{result.isTransitive() ? 'is transitive' : 'is not transitive'}</li>
-            </ul>
-        </div>}
-        {result == null ? '' :
-        <div className="col-md-3">
-            <Matrix set={set} rel={rel}/>
-        </div>}
-    </div>
+                        <li className={
+                            "list-group-item d-flex justify-content-between align-items-center" + (
+                                result.isSymmetric() ?
+                                ' list-group-item-success' :
+                                ' list-group-item-danger'
+                            )
+                        }>
+                            Symmetric
+                            <i className={
+                                result.isSymmetric() ?
+                                'bi bi-check-circle-fill text-success pe-1' :
+                                'bi bi-x-circle-fill text-danger pe-1'
+                            }></i>
+                        </li>
+                        <li className={
+                            "list-group-item d-flex justify-content-between align-items-center" + (
+                                result.isAntisymmetric() ?
+                                ' list-group-item-success' :
+                                ' list-group-item-danger'
+                            )
+                        }>
+                            Antisymmetric
+                            <i className={
+                                result.isAntisymmetric() ?
+                                'bi bi-check-circle-fill text-success pe-1' :
+                                'bi bi-x-circle-fill text-danger pe-1'
+                            }></i>
+                        </li>
+                        <li className={
+                            "list-group-item d-flex justify-content-between align-items-center" + (
+                                result.isTransitive() ?
+                                ' list-group-item-success' :
+                                ' list-group-item-danger'
+                            )
+                        }>
+                            Transitive
+                            <i className={
+                                result.isTransitive() ?
+                                'bi bi-check-circle-fill text-success pe-1' :
+                                'bi bi-x-circle-fill text-danger pe-1'
+                            }></i>
+                        </li>
+                    </ul>
+                </div>
+                <div className="col-md-4">
+                    <div className="text-center mt-3">
+                        <MatrixRender
+                            set={set}
+                            rel={rel}
+                        />
+                    </div>
+                </div>
+            </div>
+            <div className="row justify-content-end">
+                <div className="col-2">
+                    <button
+                        className="btn btn-success rounded-circle"
+                        onClick={handleShare}
+                    >
+                        <i className="bi bi-share-fill"></i>
+                    </button>
+                </div>
+            </div>
+        </>
+        }
+    </>
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

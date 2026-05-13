@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Reflexive Matrix</title>
+</head>
+
+<body style="
+    margin:0;
+    background:#f5f7fb;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Inter,Arial,sans-serif;
+">
+
+<div style="
+    position:relative;
+    width:900px;
+    height:700px;
+">
+
+    <!-- COLUMN LABELS -->
+    <div style="
+        position:absolute;
+        left:230px;
+        top:70px;
+        width:80px;
+        height:80px;
+        border-radius:50%;
+        background:#16a34a;
+        color:white;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-size:40px;
+        font-weight:700;
+        box-shadow:0 10px 20px rgba(13,110,253,0.25);
+    ">
+        1
+    </div>
+
+    <div style="
+        position:absolute;
+        left:400px;
+        top:70px;
+        width:80px;
+        height:80px;
+        border-radius:50%;
+        background:#16a34a;
+        color:white;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-size:40px;
+        font-weight:700;
+        box-shadow:0 10px 20px rgba(13,110,253,0.25);
+    ">
+        2
+    </div>
+
+    <div style="
+        position:absolute;
+        left:575px;
+        top:70px;
+        width:80px;
+        height:80px;
+        border-radius:50%;
+        background:#16a34a;
+        color:white;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-size:40px;
+        font-weight:700;
+        box-shadow:0 10px 20px rgba(13,110,253,0.25);
+    ">
+        3
+    </div>
+
+    <!-- ROW LABELS -->
+    <div style="
+        position:absolute;
+        left:80px;
+        top:220px;
+        width:80px;
+        height:80px;
+        border-radius:50%;
+        background:#16a34a;
+        color:white;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-size:40px;
+        font-weight:700;
+        box-shadow:0 10px 20px rgba(13,110,253,0.25);
+    ">
+        1
+    </div>
+
+    <div style="
+        position:absolute;
+        left:80px;
+        top:390px;
+        width:80px;
+        height:80px;
+        border-radius:50%;
+        background:#16a34a;
+        color:white;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-size:40px;
+        font-weight:700;
+        box-shadow:0 10px 20px rgba(13,110,253,0.25);
+    ">
+        2
+    </div>
+
+    <div style="
+        position:absolute;
+        left:80px;
+        top:560px;
+        width:80px;
+        height:80px;
+        border-radius:50%;
+        background:#16a34a;
+        color:white;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-size:40px;
+        font-weight:700;
+        box-shadow:0 10px 20px rgba(13,110,253,0.25);
+    ">
+        3
+    </div>
+
+    <!-- MATRIX GRID -->
+    <div style="
+        position:absolute;
+        left:190px;
+        top:180px;
+        display:grid;
+        grid-template-columns:repeat(3, 160px);
+        grid-template-rows:repeat(3, 160px);
+        gap:14px;
+    ">
+
+        <!-- CELL 1 -->
+        <div style="
+            background:#eef9f0;
+            border:4px solid #b7e4c0;
+            border-radius:20px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:60px;
+            font-weight:700;
+            color:#16a34a;
+            box-shadow:0 8px 20px rgba(0,0,0,0.06);
+        ">
+            1
+        </div>
+
+        <!-- CELL 2 -->
+        <div style="
+            background:white;
+            border:4px solid #e5e7eb;
+            border-radius:20px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:60px;
+            color:#374151;
+            box-shadow:0 8px 20px rgba(0,0,0,0.06);
+        ">
+            0
+        </div>
+
+        <!-- CELL 3 -->
+        <div style="
+            background:white;
+            border:4px solid #e5e7eb;
+            border-radius:20px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:60px;
+            color:#374151;
+            box-shadow:0 8px 20px rgba(0,0,0,0.06);
+        ">
+            0
+        </div>
+
+        <!-- CELL 4 -->
+        <div style="
+            background:white;
+            border:4px solid #e5e7eb;
+            border-radius:20px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:60px;
+            color:#374151;
+            box-shadow:0 8px 20px rgba(0,0,0,0.06);
+        ">
+            0
+        </div>
+
+        <!-- CELL 5 -->
+        <div style="
+            background:#eef9f0;
+            border:4px solid #b7e4c0;
+            border-radius:20px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:60px;
+            font-weight:700;
+            color:#16a34a;
+            box-shadow:0 8px 20px rgba(0,0,0,0.06);
+        ">
+            1
+        </div>
+
+        <!-- CELL 6 -->
+        <div style="
+            background:white;
+            border:4px solid #e5e7eb;
+            border-radius:20px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:60px;
+            color:#374151;
+            box-shadow:0 8px 20px rgba(0,0,0,0.06);
+        ">
+            0
+        </div>
+
+        <!-- CELL 7 -->
+        <div style="
+            background:white;
+            border:4px solid #e5e7eb;
+            border-radius:20px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:60px;
+            color:#374151;
+            box-shadow:0 8px 20px rgba(0,0,0,0.06);
+        ">
+            0
+        </div>
+
+        <!-- CELL 8 -->
+        <div style="
+            background:white;
+            border:4px solid #e5e7eb;
+            border-radius:20px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:60px;
+            color:#374151;
+            box-shadow:0 8px 20px rgba(0,0,0,0.06);
+        ">
+            1
+        </div>
+
+        <!-- CELL 9 -->
+        <div style="
+            background:#eef9f0;
+            border:4px solid #b7e4c0;
+            border-radius:20px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:60px;
+            font-weight:700;
+            color:#16a34a;
+            box-shadow:0 8px 20px rgba(0,0,0,0.06);
+        ">
+            1
+        </div>
+
+    </div>
+
+    <!-- DIAGONAL -->
+    <svg width="900" height="700" style="
+        position:absolute;
+        top:0;
+        left:0;
+        pointer-events:none;
+    ">
+        <line
+            x1="330"
+            y1="300"
+            x2="600"
+            y2="570"
+            stroke="#16a34a"
+            stroke-width="6"
+            stroke-dasharray="18 18"
+            stroke-linecap="round"
+        />
+    </svg>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Symmetric Matrix</title>
+</head>
+
+<body style="
+    margin:0;
+    background:#f5f7fb;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Inter,Arial,sans-serif;
+">
+
+<div style="
+    position:relative;
+    width:900px;
+    height:700px;
+">
+
+    <!-- COLUMN LABELS -->
+
+    <div style="
+        position:absolute;
+        left:230px;
+        top:70px;
+        width:80px;
+        height:80px;
+        border-radius:50%;
+        background:#dc3545;
+        color:white;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-size:40px;
+        font-weight:700;
+    ">
+        1
+    </div>
+
+    <div style="
+        position:absolute;
+        left:400px;
+        top:70px;
+        width:80px;
+        height:80px;
+        border-radius:50%;
+        background:#dc3545;
+        color:white;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-size:40px;
+        font-weight:700;
+    ">
+        2
+    </div>
+
+    <div style="
+        position:absolute;
+        left:575px;
+        top:70px;
+        width:80px;
+        height:80px;
+        border-radius:50%;
+        background:#dc3545;
+        color:white;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-size:40px;
+        font-weight:700;
+    ">
+        3
+    </div>
+
+    <!-- ROW LABELS -->
+
+    <div style="
+        position:absolute;
+        left:80px;
+        top:220px;
+        width:80px;
+        height:80px;
+        border-radius:50%;
+        background:#dc3545;
+        color:white;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-size:40px;
+        font-weight:700;
+    ">
+        1
+    </div>
+
+    <div style="
+        position:absolute;
+        left:80px;
+        top:390px;
+        width:80px;
+        height:80px;
+        border-radius:50%;
+        background:#dc3545;
+        color:white;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-size:40px;
+        font-weight:700;
+    ">
+        2
+    </div>
+
+    <div style="
+        position:absolute;
+        left:80px;
+        top:560px;
+        width:80px;
+        height:80px;
+        border-radius:50%;
+        background:#dc3545;
+        color:white;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-size:40px;
+        font-weight:700;
+    ">
+        3
+    </div>
+
+    <!-- MATRIX GRID -->
+
+    <div style="
+        position:absolute;
+        left:190px;
+        top:180px;
+        display:grid;
+        grid-template-columns:repeat(3, 160px);
+        grid-template-rows:repeat(3, 160px);
+        gap:14px;
+    ">
+
+        <!-- 1 -->
+        <div style="
+            position:relative;
+            background: #f8d7da;
+            border:4px solid #f1aeb5;
+            border-radius:20px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:60px;
+            font-weight:700;
+            color:#dc3545;
+            box-shadow:0 8px 20px rgba(0,0,0,0.06);
+        ">
+
+            <div style="
+                position:absolute;
+                width:62px;
+                height:62px;
+                border:5px solid #dc3545;
+                border-radius:50%;
+            "></div>
+
+            1
+        </div>
+
+        <!-- 2 -->
+        <div style="
+            background:white;
+            border:4px solid #e5e7eb;
+            border-radius:20px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:60px;
+            color:#374151;
+            box-shadow:0 8px 20px rgba(0,0,0,0.06);
+        ">
+            <div style="
+                position:absolute;
+                width:62px;
+                height:62px;
+                border:5px solid #dc3545;
+                border-radius:50%;
+            "></div>
+
+            1
+        </div>
+
+        <!-- 3 -->
+        <div style="
+            background:white;
+            border:4px solid #e5e7eb;
+            border-radius:20px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:60px;
+            color:#374151;
+            box-shadow:0 8px 20px rgba(0,0,0,0.06);
+        ">
+            0
+        </div>
+
+        <!-- 4 -->
+        <div style="
+            background:white;
+            border:4px solid #e5e7eb;
+            border-radius:20px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:60px;
+            color:#374151;
+            box-shadow:0 8px 20px rgba(0,0,0,0.06);
+        ">
+
+            <div style="
+                position:absolute;
+                width:62px;
+                height:62px;
+                border:5px solid #dc3545;
+                border-radius:50%;
+            "></div>
+
+            1
+        </div>
+
+        <!-- 5 -->
+        <div style="
+            position:relative;
+            background: #f8d7da;
+            border:4px solid #f1aeb5;
+            border-radius:20px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:60px;
+            font-weight:700;
+            color:#dc3545;
+            box-shadow:0 8px 20px rgba(0,0,0,0.06);
+        ">
+
+            <div style="
+                position:absolute;
+                width:62px;
+                height:62px;
+                border:5px solid #dc3545;
+                border-radius:50%;
+            "></div>
+
+            1
+        </div>
+
+        <!-- 6 -->
+        <div style="
+            background:white;
+            border:4px solid #e5e7eb;
+            border-radius:20px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:60px;
+            color:#374151;
+            box-shadow:0 8px 20px rgba(0,0,0,0.06);
+        ">
+            0
+        </div>
+
+        <!-- 7 -->
+        <div style="
+            background:white;
+            border:4px solid #e5e7eb;
+            border-radius:20px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:60px;
+            color:#374151;
+            box-shadow:0 8px 20px rgba(0,0,0,0.06);
+        ">
+
+            0
+        </div>
+
+        <!-- 8 -->
+        <div style="
+            background:white;
+            border:4px solid #e5e7eb;
+            border-radius:20px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:60px;
+            color:#374151;
+            box-shadow:0 8px 20px rgba(0,0,0,0.06);
+        ">
+
+            0
+        </div>
+
+        <!-- 9 -->
+        <div style="
+            background:white;
+            border:4px solid #e5e7eb;
+            border-radius:20px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:60px;
+            color:#374151;
+            box-shadow:0 8px 20px rgba(0,0,0,0.06);
+        ">
+            0
+        </div>
+
+    </div>
+
+    <!-- CONNECTIONS -->
+
+    <svg width="900" height="700" style="
+        position:absolute;
+        top:0;
+        left:0;
+        pointer-events:none;
+    ">
+
+        <!-- (1,1) - (2,2) -->
+        <line
+            x1="300"
+            y1="290"
+            x2="420"
+            y2="410"
+            stroke="#dc3545"
+            stroke-width="6"
+            stroke-dasharray="18 18"
+            stroke-linecap="round"
+        />
+
+        <!-- (1,1) - (1,2) -->
+        <line
+            x1="305"
+            y1="260"
+            x2="410"
+            y2="260"
+            stroke="#dc3545"
+            stroke-width="6"
+            stroke-linecap="round"
+        />
+
+        <!-- (1,1) - (2,1) -->
+        <line
+            x1="272"
+            y1="295"
+            x2="272"
+            y2="400"
+            stroke="#dc3545"
+            stroke-width="6"
+            stroke-linecap="round"
+        />
+
+        <!-- (1,2) - (2,2) -->
+        <line
+            x1="447"
+            y1="295"
+            x2="447"
+            y2="400"
+            stroke="#dc3545"
+            stroke-width="6"
+            stroke-linecap="round"
+        />
+
+        <!-- (2,1) - (2,2) -->
+        <line
+            x1="305"
+            y1="435"
+            x2="410"
+            y2="435"
+            stroke="#dc3545"
+            stroke-width="6"
+            stroke-linecap="round"
+        />
+
+    </svg>
+
+</div>
+
+</body>
+</html>
